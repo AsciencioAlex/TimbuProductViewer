@@ -7,6 +7,10 @@ class Product {
   final double currentPrice;
   final String status;
   final List<String> photos;
+  final String brand;
+  final String color;
+  final String size;
+  bool isWishlisted; // Add this property
 
   Product({
     required this.id,
@@ -17,6 +21,10 @@ class Product {
     required this.currentPrice,
     required this.status,
     required this.photos,
+    required this.brand,
+    required this.color,
+    required this.size,
+    this.isWishlisted = false, // Initialize it
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -27,13 +35,25 @@ class Product {
           json['description'] == 'null' ? '' : json['description'] ?? '',
       dateCreated: json['date_created'] ?? '',
       availableQuantity: (json['available_quantity'] ?? 0).toInt(),
-      currentPrice: (json['current_price'] is List)
-          ? json['current_price'][0]['KES'][0]
-          : (json['current_price'] ?? 0).toDouble(),
+      currentPrice: _parseCurrentPrice(json['current_price']),
       status: json['status'] ?? 'available',
-      photos: (json['photos'] as List<dynamic>)
-          .map((photo) => 'https://api.timbu.cloud/${photo['url'] as String}')
-          .toList(),
+      photos: (json['photos'] as List<dynamic>?)
+              ?.map((photo) => photo['url'] as String)
+              .toList() ??
+          [],
+      brand: json['brand'] ?? '',
+      color: json['color'] ?? '',
+      size: json['size'] ?? '',
     );
+  }
+
+  static double _parseCurrentPrice(dynamic currentPrice) {
+    if (currentPrice is List && currentPrice.isNotEmpty) {
+      var kesPrice = currentPrice[0]['KES'];
+      if (kesPrice is List && kesPrice.isNotEmpty && kesPrice[0] is double) {
+        return kesPrice[0];
+      }
+    }
+    return 0.0;
   }
 }

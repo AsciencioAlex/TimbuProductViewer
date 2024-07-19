@@ -25,4 +25,16 @@ class ProductProvider with ChangeNotifier {
       notifyListeners();
     }
   }
+
+  List<Product> get wishlistedProducts {
+    return _products.where((product) => product.isWishlisted).toList();
+  }
+
+  void toggleWishlistStatus(String productId) {
+    final index = _products.indexWhere((product) => product.id == productId);
+    if (index >= 0) {
+      _products[index].isWishlisted = !_products[index].isWishlisted;
+      notifyListeners();
+    }
+  }
 }
