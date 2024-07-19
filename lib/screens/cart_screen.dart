@@ -12,7 +12,11 @@ class CartScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
         title: const Text('My Cart', style: TextStyle(color: Colors.black)),
+=======
+        title: Text('My Cart', style: TextStyle(color: Colors.black)),
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),

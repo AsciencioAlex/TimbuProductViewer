@@ -7,12 +7,6 @@ import 'screens/checkout_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/product_detail_screen.dart';
 import 'screens/product_list_screen.dart';
-import 'screens/PaymentSelectionScreen.dart';
-import 'screens/PaymentSuccessScreen.dart';
-import 'screens/order_history_screen.dart';
-import 'screens/order_detail_screen.dart';
-import 'screens/profile_screen.dart';
-import 'screens/wishlist_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,21 +22,7 @@ class MyApp extends StatelessWidget {
             create: (context) => ProductProvider()..fetchProducts()),
       ],
       child: MaterialApp(
-        home: HomeScreen(),
-        routes: {
-          HomeScreen.routeName: (context) => HomeScreen(),
-          CartScreen.routeName: (context) => CartScreen(),
-          CheckoutScreen.routeName: (context) => CheckoutScreen(),
-          ProductDetailScreen.routeName: (context) => ProductDetailScreen(),
-          ProductListScreen.routeName: (context) => ProductListScreen(),
-          PaymentSelectionScreen.routeName: (context) =>
-              PaymentSelectionScreen(),
-          PaymentSuccessScreen.routeName: (context) => PaymentSuccessScreen(),
-          OrderHistoryScreen.routeName: (context) => OrderHistoryScreen(),
-          OrderDetailScreen.routeName: (context) => OrderDetailScreen(),
-          ProfileScreen.routeName: (context) => ProfileScreen(),
-          WishlistScreen.routeName: (context) => WishlistScreen(),
-        },
+        home: ProductListScreen(),
       ),
     );
   }

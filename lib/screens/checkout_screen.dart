@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/cart_provider.dart';
+<<<<<<< HEAD
 import 'order_history_screen.dart';
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
 import 'PaymentSelectionScreen.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -17,6 +20,7 @@ class CheckoutScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
+<<<<<<< HEAD
         actions: [
           IconButton(
             icon: Icon(Icons.history),
@@ -25,6 +29,8 @@ class CheckoutScreen extends StatelessWidget {
             },
           ),
         ],
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -67,6 +73,7 @@ class CheckoutScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+<<<<<<< HEAD
                 Provider.of<CartProvider>(context, listen: false).addOrder(
                     Provider.of<CartProvider>(context, listen: false).items,
                     Provider.of<CartProvider>(context, listen: false)
@@ -77,6 +84,11 @@ class CheckoutScreen extends StatelessWidget {
                     .pushNamed(PaymentSelectionScreen.routeName);
               },
               child: Text('Confirm Order'),
+=======
+                Navigator.pushNamed(context, PaymentSelectionScreen.routeName);
+              },
+              child: Text('Proceed to Payment'),
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 minimumSize: Size(double.infinity, 50), // Adjust button size

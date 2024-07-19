@@ -10,7 +10,10 @@ class Product {
   final String brand;
   final String color;
   final String size;
+<<<<<<< HEAD
   bool isWishlisted; // Add this property
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
 
   Product({
     required this.id,
@@ -24,7 +27,10 @@ class Product {
     required this.brand,
     required this.color,
     required this.size,
+<<<<<<< HEAD
     this.isWishlisted = false, // Initialize it
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
   });
 
   factory Product.fromJson(Map<String, dynamic> json) {
@@ -37,10 +43,16 @@ class Product {
       availableQuantity: (json['available_quantity'] ?? 0).toInt(),
       currentPrice: _parseCurrentPrice(json['current_price']),
       status: json['status'] ?? 'available',
+<<<<<<< HEAD
       photos: (json['photos'] as List<dynamic>?)
               ?.map((photo) => photo['url'] as String)
               .toList() ??
           [],
+=======
+      photos: (json['photos'] as List<dynamic>)
+          .map((photo) => photo['url'] as String)
+          .toList(),
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
       brand: json['brand'] ?? '',
       color: json['color'] ?? '',
       size: json['size'] ?? '',

@@ -50,7 +50,11 @@ class ProductListItem extends StatelessWidget {
                       Expanded(
                         child: Text(
                           product.name,
+<<<<<<< HEAD
                           style: const TextStyle(
+=======
+                          style: TextStyle(
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
@@ -58,7 +62,11 @@ class ProductListItem extends StatelessWidget {
                         ),
                       ),
                       IconButton(
+<<<<<<< HEAD
                         icon: const Icon(Icons.close),
+=======
+                        icon: Icon(Icons.close),
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
                         onPressed: () {
                           // Remove product from cart or list
                         },
@@ -68,35 +76,59 @@ class ProductListItem extends StatelessWidget {
                   Row(
                     children: [
                       Container(
+<<<<<<< HEAD
                         padding: const EdgeInsets.symmetric(
                             vertical: 4, horizontal: 8),
+=======
+                        padding:
+                            EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.blue,
                         ),
                         child: Text(
                           product.color,
+<<<<<<< HEAD
                           style: const TextStyle(
+=======
+                          style: TextStyle(
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
                             color: Colors.white,
                             fontSize: 12,
                           ),
                         ),
                       ),
+<<<<<<< HEAD
                       const SizedBox(width: 10),
                       Text(
                         '| Size ${product.size}',
                         style: const TextStyle(
+=======
+                      SizedBox(width: 10),
+                      Text(
+                        '| Size ${product.size}',
+                        style: TextStyle(
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
                           fontSize: 12,
                           color: Colors.grey,
                         ),
                       ),
                     ],
                   ),
+<<<<<<< HEAD
                   const SizedBox(height: 10),
                   Row(
                     children: [
                       IconButton(
                         icon: const Icon(Icons.remove),
+=======
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.remove),
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
                         onPressed: () {
                           // Decrease product quantity
                         },
@@ -120,7 +152,11 @@ class ProductListItem extends StatelessWidget {
                       Flexible(
                         child: Text(
                           '₦${product.currentPrice.toStringAsFixed(2)}',
+<<<<<<< HEAD
                           style: const TextStyle(
+=======
+                          style: TextStyle(
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),

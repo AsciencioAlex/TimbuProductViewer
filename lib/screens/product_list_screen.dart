@@ -11,10 +11,17 @@ class ProductListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
         title: const Text('Products'),
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart),
+=======
+        title: Text('Products'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
             onPressed: () {
               Navigator.pushNamed(context, CartScreen.routeName);
             },

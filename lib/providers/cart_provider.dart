@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import '../models/product.dart';
+<<<<<<< HEAD
 import '../models/order.dart';
 import '../models/cart_item.dart';
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
 
 class CartItem {
   final Product product;
@@ -12,7 +15,10 @@ class CartItem {
 
 class CartProvider with ChangeNotifier {
   final List<CartItem> _items = [];
+<<<<<<< HEAD
   final List<Order> _orders = [];
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
 
   List<CartItem> get items => _items;
 
@@ -21,8 +27,11 @@ class CartProvider with ChangeNotifier {
         0.0, (sum, item) => sum + item.product.currentPrice * item.quantity);
   }
 
+<<<<<<< HEAD
   List<Order> get orders => _orders;
 
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
   void addProduct(Product product) {
     final index = _items.indexWhere((item) => item.product.id == product.id);
     if (index >= 0) {
@@ -58,6 +67,7 @@ class CartProvider with ChangeNotifier {
     _items.clear();
     notifyListeners();
   }
+<<<<<<< HEAD
 
   void addOrder(List<CartItem> cartItems, double total) {
     _orders.insert(
@@ -72,4 +82,6 @@ class CartProvider with ChangeNotifier {
     _items.clear(); // Clear the cart after adding the order
     notifyListeners();
   }
+=======
+>>>>>>> a80bc33580daa6dadef7209eed4a9e51b8bf95a0
 }
